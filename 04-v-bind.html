@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .color-blue {
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+
+    <button id="button" v-bind:title="title" @click="toggle" :class="{'color-blue':lodingColor}">Hover over me</button>
+
+</div>
+
+<script src="https://unpkg.com/vue@2.1.10/dist/vue.js" ></script>
+
+<script>
+    var app = new Vue({
+        el: "#root",
+        data: {
+            title:'Now Title being setup with js...',
+            lodingColor:false
+        },
+        methods: {
+            toggle :function () {
+                this.lodingColor = true;
+            }
+        }
+    });
+</script>
+</body>
+</html>

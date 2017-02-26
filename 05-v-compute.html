@@ -17,6 +17,11 @@
         <li v-for="task in tasks" v-if="task.completed" v-text="task.describe"></li>
     </ul>
 
+    <h1>in completed</h1>
+    <ul>
+       <li v-for="task in completeTask" v-text="task.describe"></li>
+    </ul>
+
 </div>
 
 <script src="https://unpkg.com/vue@2.1.10/dist/vue.js" ></script>
@@ -35,8 +40,10 @@
                 {describe:"test666666", completed:true}
             ]
         },
-        completed: {
-
+        computed: {
+            completeTask() {
+                return this.tasks.filter(task => !task.completed);
+            }
         }
     });
 </script>

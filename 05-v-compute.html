@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root">
+
+    <h1>
+        {{message.split('').reverse().join('')}}
+    </h1>
+
+
+    <h1>This is task</h1>
+    <ul>
+        <li v-for="task in tasks" v-if="task.completed" v-text="task.describe"></li>
+    </ul>
+
+</div>
+
+<script src="https://unpkg.com/vue@2.1.10/dist/vue.js" ></script>
+
+<script>
+    var app = new Vue({
+        el: "#root",
+        data: {
+            message:"hello world",
+            tasks:[
+                {describe:"test1", completed:true},
+                {describe:"test22", completed:false},
+                {describe:"test333", completed:false},
+                {describe:"test4444", completed:false},
+                {describe:"test55555", completed:false},
+                {describe:"test666666", completed:true}
+            ]
+        },
+        completed: {
+
+        }
+    });
+</script>
+</body>
+</html>
